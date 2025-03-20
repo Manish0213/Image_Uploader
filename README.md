@@ -1,78 +1,71 @@
-1. Clone this repository:
-git clone https://github.com/username/Image-Uploader.git
-cd Image_Uploader
 
-2. Install dependencies:
+# Image Uploader
+
+A Node.js application for uploading, compressing, and storing images using Multer, Sharp, and Cloudinary.
+
+
+
+## Clone this repository:
+git clone https://github.com/Manish0213/Image_Uploader.git
+
+cd Image_Uploader
+## Install dependencies:
 npm install
 
-3. Create .env file and add the following:
-
+## Create .env file and add the following:
 CLOUDINARY_CLOUD_NAME=your_cloud_name
-
 CLOUDINARY_API_KEY=your_api_key
-
 CLOUDINARY_API_SECRET=your_api_secret
-
 MONGO_URI=your_mongo_connection_string
-
 PORT=3000
 
-5. Start the server:
+## Start the server:
 npm start
 
+## API Documentation — Image Uploader App
 
+## Base URL
+http://localhost:5000/api
 
+## API Endpoints
+[POST] Upload Image
 
+[GET] Get Image by ID
 
-API Endpoints
+[DELETE] Delete Image
+## 1. Upload Image
+[POST] /upload
 
-1.      --------------- Upload Image ----------------
-[POST] http://localhost:5000/api/upload
+🔸 Description: Upload a new image, compress it, and store the URL in Cloudinary.
 
-Description: Upload a new image, compress it, and store the URL in Cloudinary.
+🔹 Request Body
 
-Request Body
 Body Type: form-data
+
 Key: image (Type: File)
+
 Value: (Select your image file)
 
-Sample Request (Postman Example)
+🔹Sample Request (Postman Example)
+
 Body (form-data):
-Key: image | Value: [Upload a JPG/PNG file]
 
-Success Response
+    Key: image | Value: [Upload a JPG/PNG file]
 
-{
-  "message": "Image uploaded successfully",
-  "url": "https://res.cloudinary.com/demo/image/upload/v1695678901/uploads/compressed-1695678901234.jpg"
-}
+## 2. Get Image by ID
+[GET] /images/:id
 
- 2. -------------------------- Get Image by ID ------------
-    
-[GET] http://localhost:5000/api/images/:id
+🔸 Description: Fetch image URL from database using its ID.
 
-Description: Fetch image URL from database using its ID.
+🔹 Sample Request
 
-Sample Request
+    GET http://localhost:5000/api/images/67db9ef25817284b484f7287
 
-GET http://localhost:5000/api/images/67db9ef25817284b484f7287
+## 3. Delete Image
+[DELETE] /images/:id
 
-Success Response
+🔸 Description: Delete an image from both Cloudinary and MongoDB using its ID.
 
-[Redirects to Cloudinary URL]
+🔹 Sample Request
 
-3. --------------------- Delete Image ----------------------
-   
-[DELETE] http://localhost:5000/api/images/:id
-
-Description: Delete an image from both Cloudinary and MongoDB using its ID.
-
-Sample Request ->
-
-DELETE http://localhost:5000/api/images/67db9ef25817284b484f7287
-
- Success Response
- 
- {
-  "message": "Image deleted successfully"
-}
+    DELETE http://localhost:5000/api/images/67db9ef25817284b484f7287
