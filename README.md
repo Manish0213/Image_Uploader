@@ -36,26 +36,38 @@ Body (form-data):
 Key: image | Value: [Upload a JPG/PNG file]
 
 Success Response
+
 {
   "message": "Image uploaded successfully",
   "url": "https://res.cloudinary.com/demo/image/upload/v1695678901/uploads/compressed-1695678901234.jpg"
 }
 
  2. -------------------------- Get Image by ID ------------
+ 3. 
 [GET] http://localhost:5000/api/images/:id
+
 Description: Fetch image URL from database using its ID.
+
 Sample Request
+
 GET http://localhost:5000/api/images/67db9ef25817284b484f7287
+
 Success Response
+
 [Redirects to Cloudinary URL]
 
-3. --------------------- Delete Image ----------------------
+5. --------------------- Delete Image ----------------------
+6. 
 [DELETE] http://localhost:5000/api/images/:id
+
 Description: Delete an image from both Cloudinary and MongoDB using its ID.
+
 Sample Request ->
+
 DELETE http://localhost:5000/api/images/67db9ef25817284b484f7287
 
  Success Response
+ 
  {
   "message": "Image deleted successfully"
 }
