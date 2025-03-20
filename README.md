@@ -19,7 +19,8 @@ npm start
 
 
 
-                          ----- API Endpoints -----
+----- API Endpoints -----
+
 1.      --------------- Upload Image ----------------
 [POST] http://localhost:3000/api/upload
 Description: Upload a new image, compress it, and store the URL in Cloudinary.
@@ -43,7 +44,7 @@ Success Response
 [GET] http://localhost:3000/api/images/:id
 Description: Fetch image URL from database using its ID.
 Sample Request
-GET /api/images/67db9ef25817284b484f7287
+GET http://localhost:3000/api/images/67db9ef25817284b484f7287
 Success Response
 [Redirects to Cloudinary URL]
 
@@ -51,7 +52,7 @@ Success Response
 [DELETE] http://localhost:3000/api/images/:id
 Description: Delete an image from both Cloudinary and MongoDB using its ID.
 Sample Request ->
-DELETE /api/images/67db9ef25817284b484f7287
+DELETE http://localhost:3000/api/images/67db9ef25817284b484f7287
 
  Success Response
  {
