@@ -43,7 +43,7 @@ Success Response
 }
 
  2. -------------------------- Get Image by ID ------------
- 3. 
+    
 [GET] http://localhost:5000/api/images/:id
 
 Description: Fetch image URL from database using its ID.
@@ -56,8 +56,8 @@ Success Response
 
 [Redirects to Cloudinary URL]
 
-5. --------------------- Delete Image ----------------------
-6. 
+3. --------------------- Delete Image ----------------------
+   
 [DELETE] http://localhost:5000/api/images/:id
 
 Description: Delete an image from both Cloudinary and MongoDB using its ID.
