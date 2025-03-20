@@ -23,6 +23,7 @@ API Endpoints
 
 1.      --------------- Upload Image ----------------
 [POST] http://localhost:5000/api/upload
+
 Description: Upload a new image, compress it, and store the URL in Cloudinary.
 
 Request Body
